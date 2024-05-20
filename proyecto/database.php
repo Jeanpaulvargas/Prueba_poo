@@ -28,14 +28,6 @@ class Database {
     }
 }
 
-// Detalles de conexión
-$database_name = "curso_honduras";
-$host = "192.168.73.71";
-$service = "1526";
-$user = "honduras";
-$password = "honduras";
 
-// Crear instancia de la clase Database
-$database = new Database($database_name, $host, $service, $user, $password);
 
 ?>
