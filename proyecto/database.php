@@ -13,3 +13,27 @@ class Database {
                     die("Conexión fallida: " . ifx_errormsg());
                 }
             }
+    public function insertData($nombre_persona, $menu, $fecha_hora, $tiempo_comida, $nombre_servidor) {
+   
+        $query = "INSERT INTO comida_servicio (nombre_persona, menu, fecha_hora, tiempo_comida, nombre_servidor) VALUES (?, ?, ?, ?, ?)";
+        
+   
+        $stmt = ifx_prepare($query, $this->connection);
+
+    
+        if (!$stmt) {
+     
+            die("Preparación de consulta fallida: " . ifx_errormsg());
+        }
+
+      
+        if (!ifx_do($stmt, array($nombre_persona, $menu, $fecha_hora, $tiempo_comida, $nombre_servidor))) {
+ 
+            die("Ejecución de consulta fallida: " . ifx_errormsg());
+        }
+
+    }
+
+}
+
+?>
